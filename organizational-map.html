@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Organizational Map - Global Platform & Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Global Platform & Services</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="customer-experience.html" class="nav-link">Customer Experience</a>
+                <a href="organizational-map.html" class="nav-link active">Interactive Map</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Interactive Organizational Map</h1>
+                <p>Explore the dynamic structure of our global platform and services</p>
+                <div class="map-controls">
+                    <button class="btn btn-small" id="hierarchyView">Hierarchy View</button>
+                    <button class="btn btn-small" id="networkView">Network View</button>
+                    <button class="btn btn-small" id="matrixView">Matrix View</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-container">
+            <div class="organizational-map" id="orgMap">
+                <svg class="connections" id="connections"></svg>
+                
+                <!-- Root Node -->
+                <div class="org-node root-node" data-level="0" data-function="root">
+                    <h3>Global Platform & Services</h3>
+                    <p>Enterprise Service Delivery</p>
+                </div>
+
+                <!-- Level 1 - Main Functions -->
+                <div class="org-node function-node" data-level="1" data-function="lifecycle">
+                    <h4>Lifecycle</h4>
+                    <div class="node-details">
+                        <span>Customer Experience</span>
+                        <span>Employee Experience</span>
+                        <span>Operational Experience</span>
+                        <span>Digital Experience</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="expertise">
+                    <h4>Expertise</h4>
+                    <div class="node-details">
+                        <span>Customer Experience</span>
+                        <span>Employee Experience</span>
+                        <span>Digital Experience</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="delivery">
+                    <h4>Delivery</h4>
+                    <div class="node-details">
+                        <span>Customer Experience</span>
+                        <span>Employee Experience</span>
+                        <span>Digital Experience</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="ecosystem">
+                    <h4>Ecosystem</h4>
+                    <div class="node-details">
+                        <span>Data Centers Management</span>
+                        <span>Security</span>
+                        <span>Monitoring & Admin Zone</span>
+                        <span>Vendor Mgmt & IT Asset Mgmt</span>
+                        <span>Digital & AI Skill Center</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="incubation">
+                    <h4>Incubation & Early Delivery</h4>
+                    <div class="node-details">
+                        <span>Business Development</span>
+                        <span>Incubation Design & Support</span>
+                        <span>Security & SDWAN</span>
+                        <span>Connectivity Incubation</span>
+                        <span>Smart Mobility & IoT Incubation</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="infrastructure">
+                    <h4>Infrastructures Enablers</h4>
+                    <div class="node-details">
+                        <span>Private & Hybrid Cloud</span>
+                        <span>Public Cloud Flexible Engine</span>
+                        <span>Shared Cloud</span>
+                        <span>WAN LAN & Shared Enablers</span>
+                        <span>Service Platforms</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="performance">
+                    <h4>Performance Management</h4>
+                    <div class="node-details">
+                        <span>Performance Analytics</span>
+                        <span>Quality Assurance</span>
+                        <span>Service Optimization</span>
+                    </div>
+                </div>
+
+                <div class="org-node function-node" data-level="1" data-function="cyber">
+                    <h4>Cyber Support Unit</h4>
+                    <div class="node-details">
+                        <span>Security Operations</span>
+                        <span>Threat Intelligence</span>
+                        <span>Incident Response</span>
+                    </div>
+                </div>
+
+                <!-- Level 2 - Customer Experience Details -->
+                <div class="org-node detail-node" data-level="2" data-parent="lifecycle" data-function="cx-centers">
+                    <h5>Contact Centers</h5>
+                    <div class="node-details">
+                        <span>Genesys Cloud CX</span>
+                        <span>Kiamo Contact Center</span>
+                        <span>Avaya Contact Center</span>
+                    </div>
+                </div>
+
+                <div class="org-node detail-node" data-level="2" data-parent="lifecycle" data-function="cx-tech">
+                    <h5>Technologies</h5>
+                    <div class="node-details">
+                        <span>NICE Cxone</span>
+                        <span>WebEx Contact Center</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-legend">
+            <div class="container">
+                <h3>Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-color root-color"></div>
+                        <span>Root Functions</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color function-color"></div>
+                        <span>Core Functions</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color detail-color"></div>
+                        <span>Detailed Services</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Global Platform & Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>
